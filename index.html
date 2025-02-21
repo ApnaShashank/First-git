@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        Welcome to the Typing Practice Website
+    </header>
+    <div class="container">
+        <textarea id="typing-area" placeholder="Start typing here..."></textarea>
+        <p id="word-count">Words: 0</p>
+    </div>
+    <script>
+        const typingArea = document.getElementById('typing-area');
+        const wordCount = document.getElementById('word-count');
+        
+        typingArea.addEventListener('input', () => {
+            const words = typingArea.value.trim().split(/\s+/).filter(word => word.length > 0);
+            wordCount.textContent = `Words: ${words.length}`;
+        });
+    </script>
+</body>
+</html>
